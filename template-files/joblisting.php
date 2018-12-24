@@ -13,31 +13,31 @@ if ((isset($_REQUEST['btnsub'])) && $_REQUEST['dropdept'] != '0') {
 
             <form action="" method="" class="wpjbs_flterfrm">
                 <?php
-                if (sanitize_text_field($_POST['btnsub'])) {
-                    $taxonomy = 'department';
-                    $terms = get_terms('department');
-                    echo "<select class='wpjbs_fselect' id='mytrem' name='dropdept'>";
-                    echo "<option value='0'>All department</option>";
-                    foreach ($terms as $term) {
-                        $term_link = get_term_link($term, 'department');
-                        if (is_wp_error($term_link))
-                            continue;
-                        echo '<option  value=' . $term->term_id . ' >' . $term->name . '</option>';
-                    }
-                    echo '</select>';
-                }else {
-                    $taxonomy = 'department';
-                    $terms = get_terms('department');
-                    echo "<select class='wpjbs_fselect' id='mytrem' name='dropdept'>";
-                    echo "<option value='0'>All department</option>";
-                    foreach ($terms as $term) {
-                        $term_link = get_term_link($term, 'department');
-                        if (is_wp_error($term_link))
-                            continue;
-                        echo '<option  value=' . $term->term_id . ' >' . $term->name . '</option>';
-                    }
-                    echo '</select>';
-                }
+                  if (isset($_POST['btnsub'])) {
+                      $taxonomy = 'department';
+                      $terms = get_terms('department');
+                      echo "<select class='wpjbs_fselect' id='mytrem' name='dropdept'>";
+                      echo "<option value='0'>All department</option>";
+                      foreach ($terms as $term) {
+                          $term_link = get_term_link($term, 'department');
+                          if (is_wp_error($term_link))
+                              continue;
+                          echo '<option  value=' . $term->term_id . ' >' . $term->name . '</option>';
+                      }
+                      echo '</select>';
+                  }else {
+                      $taxonomy = 'department';
+                      $terms = get_terms('department');
+                      echo "<select class='wpjbs_fselect' id='mytrem' name='dropdept'>";
+                      echo "<option value='0'>All department</option>";
+                      foreach ($terms as $term) {
+                          $term_link = get_term_link($term, 'department');
+                          if (is_wp_error($term_link))
+                              continue;
+                          echo '<option  value=' . $term->term_id . ' >' . $term->name . '</option>';
+                      }
+                      echo '</select>';
+                  }
                 ?>
 
                 <input type="submit" name="btnsub" class="wpjbs_sbtn" value="Filter Jobs"/>

@@ -1,6 +1,8 @@
 <div class="wrap">
     <h2>WP Jobs - <?php _e('Settings', 'wp-jobs'); ?></h2>
     <?php
+    $wpjobs_pg_pro_list = "";
+    $wpjobs_send_mail = "";
     if (get_option('wpjobs_pg_pro_list') <> '') {
         $wpjobs_pg_pro_list = get_option('wpjobs_pg_pro_list');
     }

@@ -4,7 +4,7 @@
   Plugin URI: http://www.intensewp.com/wp-jobs/
   Description: Post jobs on your WordPress site. User can apply and attach resume/CV for the jobs.
   Author: Intense WP
-  Version: 1.8
+  Version: 1.9
   Author URI: http://www.intensewp.com/
   Text Domain: wp-jobs
   Domain Path: /languages
@@ -50,7 +50,11 @@ function wp_jobs_activation() {
 register_activation_hook(__FILE__, 'wp_jobs_activation');
 
 function wp_jobs_admin_style() {
+    wp_register_style('wp_jobs_bootstrap_css', plugins_url('css/bootstrap.min.css', __FILE__), false);
+    wp_register_style('wp_jobs_bootstrap_responsive_css', plugins_url('css/bootstrap-responsive.min.css', __FILE__), false);
     wp_register_style('wp_jobs_admin_css', plugins_url('css/styles.css', __FILE__), false, '1.0.0');
+    wp_enqueue_style('wp_jobs_bootstrap_css');
+    wp_enqueue_style('wp_jobs_bootstrap_responsive_css');
     wp_enqueue_style('wp_jobs_admin_css');
 }
 
@@ -164,11 +168,15 @@ function wpjobs_AdminMenu() {
     $wpjobs_homepage = add_menu_page($wpjobs_PluginName . " Configuration", 'WP Jobs', 'edit_themes', $wpjobs_PluginName . "Home", 'wpjobs_HomeView');
     $wpjobs_settings_page = add_submenu_page("WPJobsHome", "Job Settings", 'Settings', "edit_themes", "JobSettings", 'wpjobs_SettingsView');
     $wpjobs_applications = add_submenu_page("edit.php?post_type=job", "Job Applications", "Job Applications", 'edit_themes', $wpjobs_PluginName . "Apps", 'wpjobs_ApplicationsView');
-}
+    $wpjobs_homepage2 = add_submenu_page("WPJobsHome", "Job Settings", 'Pop', "edit_themes", "my-cpt", 'display_my_test_page');
+    //add_action( 'admin_print_styles-' . $submenu, 'admin_custom_css' );
 
+}
 add_action('admin_menu', 'wpjobs_AdminMenu');
 
+//-------------
 function wpjobs_HomeView() {
+
     global $wpjobs_PluginName, $wpdb;
     include 'wpjobs_home.php';
 }
@@ -176,6 +184,7 @@ function wpjobs_HomeView() {
 function wpjobs_SettingsView() {
     global $wpjobs_PluginName, $wpdb;
     include 'wpjobs_settings.php';
+
 }
 
 function wpjobs_ApplicationsView() {
@@ -292,14 +301,14 @@ function wpjobs_save_info($postID) {
     if ($parent_id = wp_is_post_revision($postID)) {
         $postID = $parent_id;
     }
-    update_post_meta($postID, 'wp_jobs_designation', sanitize_text_field($_POST['wp_jobs_designation']));
-    update_post_meta($postID, 'wp_jobs_application_email', sanitize_email($_POST['wp_jobs_application_email']));
-    update_post_meta($postID, 'wp_jobs_date_start', sanitize_text_field($_POST['wp_jobs_date_start']));
-    update_post_meta($postID, 'wp_jobs_date_close', sanitize_text_field($_POST['wp_jobs_date_close']));
-    update_post_meta($postID, 'wp_jobs_location', sanitize_text_field($_POST['wp_jobs_location']));
-    update_post_meta($postID, 'wp_jobs_salary', sanitize_text_field($_POST['wp_jobs_salary']));
-    update_post_meta($postID, 'wp_jobs_type', sanitize_text_field($_POST['wp_jobs_type']));
-    update_post_meta($postID, 'wp_jobs_frm', sanitize_text_field($_POST['wp_jobs_frm']));
+    if (isset($_POST['wp_jobs_designation'])){ update_post_meta($postID, 'wp_jobs_designation', sanitize_text_field($_POST['wp_jobs_designation']));}
+    if (isset($_POST['wp_jobs_application_email'])){ update_post_meta($postID, 'wp_jobs_application_email', sanitize_email($_POST['wp_jobs_application_email']));}
+    if (isset($_POST['wp_jobs_date_start'])){ update_post_meta($postID, 'wp_jobs_date_start', sanitize_text_field($_POST['wp_jobs_date_start']));}
+    if (isset($_POST['wp_jobs_date_close'])){ update_post_meta($postID, 'wp_jobs_date_close', sanitize_text_field($_POST['wp_jobs_date_close']));}
+    if (isset($_POST['wp_jobs_location'])){ update_post_meta($postID, 'wp_jobs_location', sanitize_text_field($_POST['wp_jobs_location']));}
+    if (isset($_POST['wp_jobs_salary'])){ update_post_meta($postID, 'wp_jobs_salary', sanitize_text_field($_POST['wp_jobs_salary']));}
+    if (isset($_POST['wp_jobs_type'])){ update_post_meta($postID, 'wp_jobs_type', sanitize_text_field($_POST['wp_jobs_type']));}
+    if (isset($_POST['wp_jobs_frm'])){ update_post_meta($postID, 'wp_jobs_frm', sanitize_text_field($_POST['wp_jobs_frm']));}
 
     $qlf_html = array(
         'a' => array(
@@ -324,7 +333,7 @@ function wpjobs_save_info($postID) {
             'title' => array()
         ),
     );
-    update_post_meta($postID, 'wpjobseditorqualification', wp_kses($_POST['wpjobseditorqualification'], $qlf_html));
+    if(isset($_POST['wpjobseditorqualification'])) {update_post_meta($postID, 'wpjobseditorqualification', wp_kses($_POST['wpjobseditorqualification'], $qlf_html));}
 }
 
 function wp_jobs_shortcode_joblisting() {
@@ -336,7 +345,7 @@ add_filter('template_redirect', 'wp_jobs_applicationformtemp');
 
 function wp_jobs_applicationformtemp() {
     global $post;
-    if ('job' === $post->post_type) {
+    if ('job' === get_post_type()) {
         $outputjob = include(plugin_dir_path(__FILE__) . 'template-files/applicationform.php');
         exit;
     }
@@ -348,7 +357,7 @@ function wp_jobs_joblisting() {
     global $post;
     $wpjobs_pg_pro_list = get_option('wpjobs_pg_pro_list');
 
-    if ($post->ID == $wpjobs_pg_pro_list) {
+    if (get_the_id() == $wpjobs_pg_pro_list) {
         include(plugin_dir_path(__FILE__) . '/template-files/joblisting.php');
         exit;
     }

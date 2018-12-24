@@ -50,13 +50,16 @@ $jobs = get_posts($jb_args);
         <th><strong><?php _e('Download Resume', 'wp-jobs'); ?></strong></th>
     </tr>
     <?php
+    $column_name = "app_id";
     if (null !== $job_id) {
-        $qry = "SELECT * FROM " . $wpdb->prefix . "app_user_info WHERE app_job_id = %d ";
+        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_app_user_info WHERE app_job_id = %d ORDER BY %s DESC ", $column_name, $job_id));
+
+        //$qry = "SELECT * FROM " . $wpdb->prefix . "app_user_info WHERE app_job_id = %d ";
     } else {
-        $qry = "Select * from " . $wpdb->prefix . "app_user_info ";
+        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_app_user_info ORDER BY %s DESC ", $column_name));
     }
-    $qry .= " ORDER BY `app_id` DESC ";
-    $users = $wpdb->get_results($wpdb->prepare($qry, $job_id));
+    //$qry .= " ORDER BY `app_id` DESC ";
+    //$users = $wpdb->get_results($wpdb->prepare($qry, $job_id));
     $i = 1;
     foreach ($users as $user) {
         ?>

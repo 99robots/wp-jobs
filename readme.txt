@@ -1,10 +1,10 @@
 === WP Jobs ===
-Contributors: hozyali
+Contributors: hozyali, 99robots, charliepatel
 Donate link: http://www.intensewp.com/wp-jobs/
 Tags: wp jobs, wordpress job listing plugin, wordpress jobs, resume cv attachment
 Requires at least: 3.0.1
-Tested up to: 4.8.1
-Stable tag: 1.8
+Tested up to: 5.0.2
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ Newly Added Features
 --------------------
 * You can use Contact Form 7 or any other form plugin and place its shortcode for CV/Resume application and replace the default application form
 * Redesigned job listing and job detail pages
-* Added job type field (full time, contract, part time etc)d 
+* Added job type field (full time, contract, part time etc)d
 
 Features
 ------------
@@ -43,7 +43,7 @@ Features
 Create Job Listing page
 ------------------------------
 
-* Create a regular page in your wordpress website 
+* Create a regular page in your wordpress website
 * Then go to WP Jobs in admin > settings and select that page for job listing
 
 Support
@@ -64,12 +64,17 @@ Support
 
 == Changelog ==
 
+= 1.9 =
+* UI updates, updated mobile view on job listing page
+* Made compatible with WordPress 5.0.2
+* Fixed Warnings and Notices
+
 = 1.8 =
 * Redesigned job listing and job detail view pages
 * Added job type field (full time, contract, part time etc)
 * Added shortcode support for application form
 
-= 1.7 = 
+= 1.7 =
 * Fixed vulnerability in submit job application
 
 = 1.6 =
@@ -90,7 +95,7 @@ Support
 = 1.3 =
 * Fixed some translation vars
 * Fixed layout settings for responsive display
-* Adjusted application form css 
+* Adjusted application form css
 * Updated internal links
 
 = 1.2 =

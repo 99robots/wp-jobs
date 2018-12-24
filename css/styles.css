@@ -106,9 +106,9 @@
     padding:5px;
     line-height: 20px;
 }
-.mceContentBody body {     
+.mceContentBody body {
     background-color: #FFF !important;
-} 
+}
 #tinymce .mceContentBody {
     background-color:#000000 !important;
 }
@@ -160,7 +160,7 @@
 .wpjbs_dtailmain .wpjbs_dtailleft .wpjbs_dtitle{font-family: 'poppinssemibold';font-size: 21px;}
 .wpjbs_dtailmain .wpjbs_dtailleft {font-family: 'poppinsregular'; color:black;margin-bottom: 9px;}
 .wpjbs_dtailmain .wpjbs_dtailleft .wpjbs_dsections{background: #ffffff;padding: 14px;margin-bottom: 21px;border: solid 1px #e6e6e6;}
-.wpjbs_dtailmain .wpjbs_dtailleft p{margin-bottom: 10px; color: #444;font-size: 15px;} 
+.wpjbs_dtailmain .wpjbs_dtailleft p{margin-bottom: 10px; color: #444;font-size: 15px;}
 .wpjbs_dtailmain .wpjbs_dtailleft strong{font-family: 'poppinssemibold';}
 .wpjbs_dtailmain .wpjbs_dtailleft .wpjbs_dinfo{}
 .wpjbs_dtailmain .wpjbs_dtailleft .wpjbs_dinfo p{margin-bottom: 10px; color: #444;font-size: 15px;}
@@ -194,7 +194,7 @@ text-transform: none; font-size:14px;margin: 5px 0;}
 .wpjbs_listright .sidebar {width: 100%;margin-left: 0;}
 .wpjbs_listright #secondary {width: 100%;margin-left: 0;}
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
 .wpjbs_dtailmain {padding: 0 29px;}
 .wpjbs_listing {padding: 0 29px;}
 .wpjbs_listing .wpjbs_listleft {width: 100%;}
@@ -203,6 +203,11 @@ text-transform: none; font-size:14px;margin: 5px 0;}
 .wpjbs_fulltpl .wpjbs_flterfrm .wpjbs_fselect {width: 57% !important;}
 .wpjbs_dtailmain .wpjbs_dtailleft {width: 100%;}
 .wpjbs_dtailmain .wpjbs_dtailright {width: 100%;float: right;}
+}
+@media (max-width: 993px) {
+  .wpjbs_listing .wpjbs_fifth, .wpjbs_listing .wpjbs_fourth, .wpjbs_listing .wpjbs_third, .wpjbs_listing .wpjbs_second,.wpjbs_listing .wpjbs_first{
+    width: 19%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -213,6 +218,10 @@ text-transform: none; font-size:14px;margin: 5px 0;}
 .wpjbs_listing .wpjbs_listleft {width: 100%;}
 .wpjbs_dtailmain .wpjbs_dtailleft {width: 100%;}
 .wpjbs_dtailmain .wpjbs_dtailright {width: 100%;float: right;}
+.wpjbs_listing .wpjbs_fifth, .wpjbs_listing .wpjbs_fourth, .wpjbs_listing .wpjbs_third, .wpjbs_listing .wpjbs_second,.wpjbs_listing .wpjbs_first{
+  width: 100%;
+  text-align: center;
+}
 }
 
 @media screen and (min-width: 48em) {
