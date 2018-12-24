@@ -168,7 +168,6 @@ function wpjobs_AdminMenu() {
     $wpjobs_homepage = add_menu_page($wpjobs_PluginName . " Configuration", 'WP Jobs', 'edit_themes', $wpjobs_PluginName . "Home", 'wpjobs_HomeView');
     $wpjobs_settings_page = add_submenu_page("WPJobsHome", "Job Settings", 'Settings', "edit_themes", "JobSettings", 'wpjobs_SettingsView');
     $wpjobs_applications = add_submenu_page("edit.php?post_type=job", "Job Applications", "Job Applications", 'edit_themes', $wpjobs_PluginName . "Apps", 'wpjobs_ApplicationsView');
-    $wpjobs_homepage2 = add_submenu_page("WPJobsHome", "Job Settings", 'Pop', "edit_themes", "my-cpt", 'display_my_test_page');
     //add_action( 'admin_print_styles-' . $submenu, 'admin_custom_css' );
 
 }
