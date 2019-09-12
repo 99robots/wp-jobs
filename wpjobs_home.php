@@ -68,7 +68,7 @@
                 _e('Thank you for choosing WP Jobs plugin. We hope you will like the plugin and enjoy using it. Please leave us a review if you like our plugin.', 'wp-jobs');
                 ?>
             </li>
-            <li><?php _e('If you have any support or sales related queries, please feel free to send an email to ', 'wp-jobs')?> <a href="mailto:sales@intensewp.com">sales@intensewp.com</a></li>
+            <li><?php _e('If you have any support or sales related queries, please feel free to send an email to ', 'wp-jobs')?> <a href="mailto:support@99robots.com">support@99robots.com</a></li>
             <li><?php _e('You can also visit our ', 'wp-jobs'); ?><a href="http://support.intensewp.com/" target="_blank"><?php _e('Support Help Desk by clicking here', 'wp-jobs'); ?></a></li>
           </ul>
         </div>

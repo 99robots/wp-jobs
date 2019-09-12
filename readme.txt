@@ -1,10 +1,10 @@
 === WP Jobs ===
-Contributors: hozyali, 99robots, charliepatel
+Contributors: 99robots, charliepatel
 Donate link: http://www.intensewp.com/wp-jobs/
 Tags: wp jobs, wordpress job listing plugin, wordpress jobs, resume cv attachment
 Requires at least: 3.0.1
-Tested up to: 5.0.2
-Stable tag: 1.9
+Tested up to: 5.2.3
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,11 @@ Support
 == Screenshots ==
 
 == Changelog ==
+
+= 2.0 = 2019-09-12
+* UI updates, removed sidebars
+* Made compatible with WordPress 5.2.3
+* Fixed Warnings and Notices
 
 = 1.9 =
 * UI updates, updated mobile view on job listing page

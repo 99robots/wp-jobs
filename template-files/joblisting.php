@@ -104,9 +104,9 @@ if ((isset($_REQUEST['btnsub'])) && $_REQUEST['dropdept'] != '0') {
     </div>
     <?php wp_reset_postdata(); ?>
 
-    <div class="wpjbs_listright">
-        <?php get_sidebar(); ?>
-    </div>
+    <!--<div class="wpjbs_listright">
+        <?php //get_sidebar(); ?>
+    </div>-->
     <div class="clear"></div>
 </div><!-- #content -->
 

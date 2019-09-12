@@ -122,8 +122,8 @@
 .wpjbs_fulltpl {width: 100% !important;}
 .wpjbs_fulltpl .wpjbs_flterfrm .wpjbs_fselect {width: 85% !important;}
 .wpjbs_listing {width: 100%;padding: 0 70px;margin-top: 15px;}
-.wpjbs_listing .wpjbs_listleft{width: 68%; float:left;}
-.wpjbs_listing .wpjbs_listright{width: 30%; float:right;}
+.wpjbs_listing .wpjbs_listleft{width: 70%; float:none; margin: 0 auto;}
+/*.wpjbs_listing .wpjbs_listright{width: 30%; float:right;}*/
 .wpjbs_listright aside { width:100%; margin-left:0;}
 .wpjbs_listing .wpjbs_flterfrm{background: #f8f8f8;padding: 23px 11px; text-align:center; margin-bottom:0;}
 .wpjbs_listing .wpjbs_flterfrm .wpjbs_fselect{width: 78%;height: 34px;border-radius: 0;background: white;border: solid 1px #ccc;font-family: 'poppinsregular'; font-size:14px;box-shadow: none;    margin: 5px 0;}
@@ -133,11 +133,11 @@
 .wpjbs_listing .wpjbs_jbmain li:nth-child(odd) {background-color: #fff;}
 .wpjbs_listing .wpjbs_jbmain li:nth-child(even) {background-color: #f8f8f8;}
 .wpjbs_listing .wpjbs_jbmain li{padding: 10px 11px; text-align:center;}
-.wpjbs_listing .wpjbs_first{ display:inline-block; text-align:left; width:35%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
-.wpjbs_listing .wpjbs_second{display:inline-block; text-align:center; width:15.3%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
-.wpjbs_listing .wpjbs_third{display:inline-block; text-align:center; width:15.3%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
-.wpjbs_listing .wpjbs_fourth{display:inline-block; text-align:center; width:15.3%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
-.wpjbs_listing .wpjbs_fifth{display:inline-block; text-align:center; width:15.3%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
+.wpjbs_listing .wpjbs_first{ display:inline-block; text-align:left; width:30%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
+.wpjbs_listing .wpjbs_second{display:inline-block; text-align:center; width:17.0%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
+.wpjbs_listing .wpjbs_third{display:inline-block; text-align:center; width:17.0%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
+.wpjbs_listing .wpjbs_fourth{display:inline-block; text-align:center; width:17.0%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
+.wpjbs_listing .wpjbs_fifth{display:inline-block; text-align:center; width:17.0%;vertical-align: middle;font-family: 'poppinsregular';font-size: 14px; color:black;word-wrap: break-word;}
 .wpjbs_listing .wpjbs_first strong{font-family: 'poppinssemibold';}
 .wpjbs_listing .wpjbs_second strong{font-family: 'poppinssemibold'}
 .wpjbs_listing .wpjbs_third strong{font-family: 'poppinssemibold'}
@@ -154,8 +154,8 @@
 
 
 .wpjbs_dtailmain {width: 100%;padding: 0 100px;margin-top: 15px;}
-.wpjbs_dtailmain .wpjbs_dtailleft{width: 68%; float:left;}
-.wpjbs_dtailmain .wpjbs_dtailright{width: 30%; float:right;}
+.wpjbs_dtailmain .wpjbs_dtailleft{width: 70%; float:none; margin: 0 auto;}
+/*.wpjbs_dtailmain .wpjbs_dtailright{width: 30%; float:right;}*/
 .wpjbs_dtailmain .wpjbs_dtailright .has-sidebar #secondary {width: 100%;}
 .wpjbs_dtailmain .wpjbs_dtailleft .wpjbs_dtitle{font-family: 'poppinssemibold';font-size: 21px;}
 .wpjbs_dtailmain .wpjbs_dtailleft {font-family: 'poppinsregular'; color:black;margin-bottom: 9px;}
@@ -188,7 +188,7 @@ padding-left: 24px;margin-left: 6px;}
 .wpjbs_dtailmain .wpjbs_dtailleft .wpjbs_dsections .wpjbs_applicationfrm .wpjbs_fileatt {width: 100%;height: auto;border: dashed 1px #ccc; margin-bottom:8px; cursor:pointer;font-size: 15px;font-family: 'poppinsregular';line-height: 12px;}
 .wpjbs_dtailmain .wpjbs_dtailleft .wpjbs_dsections .wpjbs_applicationfrm .wpjbs_help-block {font-size: 14px;font-style: italic;}
 .wpjbs_listing .wpjbs_sbtn{background-color: #288bcb;border: 0;-webkit-border-radius: 2px; border-radius: 2px;-webkit-box-shadow: none;box-shadow: none;color: #fff;cursor: pointer;display: inline-block;font-size: 14px;font-size: 0.875rem;font-weight: 800;line-height: 6px;padding: 1em 2em;text-shadow: none; -webkit-transition: background 0.2s;transition: background 0.2s;flex-direction: column;font-family: 'poppinsregular'; font-weight:normal;height: 34px;
-text-transform: none; font-size:14px;margin: 5px 0;}
+text-transform: none; font-size:14px;margin: 0px;}
 .wpjbs_dtailmain .wpjbs_dtailright #secondary {width: 100% !important;margin-left: 0;}
 .wpjbs_dtailmain .wpjbs_dtailright .sidebar{width: 100% !important;margin-left: 0;}
 .wpjbs_listright .sidebar {width: 100%;margin-left: 0;}

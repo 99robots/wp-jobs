@@ -1,11 +1,11 @@
 <?php
 /*
   Plugin Name: WP Jobs
-  Plugin URI: http://www.intensewp.com/wp-jobs/
+  Plugin URI: https://99robots.com/products
   Description: Post jobs on your WordPress site. User can apply and attach resume/CV for the jobs.
-  Author: Intense WP
-  Version: 1.9
-  Author URI: http://www.intensewp.com/
+  Author: 99 Robots
+  Version: 2.0
+  Author URI: https://99robots.com/
   Text Domain: wp-jobs
   Domain Path: /languages
  */
@@ -122,6 +122,24 @@ function wp_jobs_Adduser_tbl() {
 }
 
 add_action('init', 'wp_jobs_custom_init');
+
+// Adding A settings link for the plugin on the Settings Page
+add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'wpjobs_add_plugin_page_settings_link');
+function wpjobs_add_plugin_page_settings_link( $links ) {
+	$links = array_merge(array('<a href="' .
+		admin_url( 'admin.php?page=WPJobsHome' ) .
+		'">' . __('Settings') . '</a>'), $links);
+	return $links;
+}
+
+// define the wp_mail_failed callback
+function action_wp_mail_failed($wp_error)
+{
+    return error_log(print_r($wp_error, true));
+}
+
+// add the action
+add_action('wp_mail_failed', 'action_wp_mail_failed', 10, 1);
 
 // Register Custom Taxonomy
 function wp_jobs_taxonomy() {

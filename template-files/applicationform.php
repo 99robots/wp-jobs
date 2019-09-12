@@ -234,9 +234,10 @@ if (isset($_POST['btnsubform'])) {
         </div>
 
     </div>
+    <!--
     <div class="wpjbs_dtailright">
-        <?php get_sidebar(); ?>
-    </div>
+        <?php //get_sidebar(); ?>
+    </div>-->
     <div class="clear"></div>
 </div><!-- #content -->
 
