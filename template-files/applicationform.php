@@ -4,6 +4,10 @@
  */
 get_header();
 
+if (get_option('wpjobs_send_mail') <> '') {
+    $wpjobs_send_mail = get_option('wpjobs_send_mail');
+}
+
 if (isset($_POST['btnsubform'])) {
     $fname = sanitize_text_field($_POST['user_fname']);
     $lname = sanitize_text_field($_POST['user_lname']);
@@ -183,11 +187,16 @@ if (isset($_POST['btnsubform'])) {
 
                                             $usrheadersrpt[] = "Content-type: text/html";
                                             $usrheadersrpt[] = 'From: <' . get_option("wpjobs_send_mail") . '>';
+                                            $usr_admin_headersrpt[] = "Content-type: text/html";
+                                            $usr_admin_headersrpt[] = 'From: <' . $email . '>';
                                             $adm_messagerpt = "<table><tr><td colspan='4'><h3>Thank you " . $fname . "</h3></td></tr>
   <tr><td colspan='4'>Applying for the post of " . $title . "</td></tr></table>";
                                             $adm_messagerpt = "Thank you " . $fname . " for applying for the job " . $title;
+                                            $admin_messagerpt = "<table><tr><td colspan='4'><h3>New Application By: " . $fname . "</h3></td></tr><tr><td colspan='4'>Applying for the post of " . $title . "</td></tr></table>";
+                                            $admin_messagerpt = "New Application by " . $fname . " for the job: " . $title;
 
                                             wp_mail($email, __('Job submission confirmation', 'wp-jobs'), $adm_messagerpt, $usrheadersrpt);
+                                            wp_mail($wpjobs_send_mail, __('Job submission confirmation', 'wp-jobs'), $admin_messagerpt, $usr_admin_headersrpt);
                                             //This is Email Section	End
                                             ?>
                                             <script type="text/javascript">
