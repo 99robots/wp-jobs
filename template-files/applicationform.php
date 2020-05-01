@@ -183,20 +183,28 @@ if (isset($_POST['btnsubform'])) {
                                             );
                                             //this is an insert user section end
                                             //This is Email Section	Start
+                                            $tbl = $wpdb->prefix;
+                                            $emailattqry = "select app_cv from " . $tbl . "app_user_info where app_job_id='" . $post->ID . "' and app_email='" . $email . "'";
 
+                                            $getattachEmail = $wpdb->get_var($emailattqry);
+                                            $docmain = pathinfo(ABSPATH);
+                                            $docpath = $docmain['dirname'];
+                                            $attachpath = wp_make_link_relative($getattachEmail);
+                                            $finalpath = $docpath . $attachpath;
 
                                             $usrheadersrpt[] = "Content-type: text/html";
+                                            $adm_attachments = array($finalpath);
                                             $usrheadersrpt[] = 'From: <' . get_option("wpjobs_send_mail") . '>';
                                             $usr_admin_headersrpt[] = "Content-type: text/html";
-                                            $usr_admin_headersrpt[] = 'From: <' . $email . '>';
+                                            $usr_admin_headersrpt[] = 'From:' . $email;
                                             $adm_messagerpt = "<table><tr><td colspan='4'><h3>Thank you " . $fname . "</h3></td></tr>
   <tr><td colspan='4'>Applying for the post of " . $title . "</td></tr></table>";
                                             $adm_messagerpt = "Thank you " . $fname . " for applying for the job " . $title;
-                                            $admin_messagerpt = "<table><tr><td colspan='4'><h3>New Application By: " . $fname . "</h3></td></tr><tr><td colspan='4'>Applying for the post of " . $title . "</td></tr></table>";
-                                            $admin_messagerpt = "New Application by " . $fname . " for the job: " . $title;
+                                            //$admin_messagerpt = "<table><tr><td colspan='4'><h3>New Application By: " . $fname . "</h3></td></tr><tr><td colspan='4'>Applying for the post of " . $title . "</td></tr><p>DB: ".print_r($getattachEmail)."</p><p>Attachment ".print_r($adm_attachments)."</p></table>";
+                                            $admin_messagerpt = "New Application by " . $fname . " for the job: " . $title ." <p>Attached is the resume</p> ";
 
                                             wp_mail($email, __('Job submission confirmation', 'wp-jobs'), $adm_messagerpt, $usrheadersrpt);
-                                            wp_mail($wpjobs_send_mail, __('Job submission confirmation', 'wp-jobs'), $admin_messagerpt, $usr_admin_headersrpt);
+                                            wp_mail($wpjobs_send_mail, __('Job submission confirmation', 'wp-jobs'), $admin_messagerpt, $usr_admin_headersrpt, $adm_attachments);
                                             //This is Email Section	End
                                             ?>
                                             <script type="text/javascript">

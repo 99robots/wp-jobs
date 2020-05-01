@@ -4,7 +4,7 @@ Donate link: http://www.intensewp.com/wp-jobs/
 Tags: wp jobs, wordpress job listing plugin, wordpress jobs, resume cv attachment
 Requires at least: 3.0.1
 Tested up to: 5.4.1
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,10 @@ Support
 == Screenshots ==
 
 == Changelog ==
+
+= 2.2 = 2020-05-01
+* BUG FIX: Job Application Filters
+* Job Application Email Notifications now come with attachments
 
 = 2.1 = 2020-05-01
 * Made compatible with WordPress 5.4.1

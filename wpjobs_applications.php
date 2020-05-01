@@ -21,13 +21,13 @@ $jobs = get_posts($jb_args);
 ?>
 <form autocomplete="off" name="form" id="form">
     <?php _e('Filter by Job', 'wp-jobs'); ?> <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent', this, 0)">
-        <option value="edit.php?post_type=job&page=WPJobsJobApps"><?php _e('All Applications', 'wp-jobs'); ?></option>
+        <option value="edit.php?post_type=job&page=WPJobsApps"><?php _e('All Applications', 'wp-jobs'); ?></option>
         <?php foreach ($jobs as $job_info) : setup_postdata($jobs); ?>
             <option <?php
             if ($job_info->ID == $job_id) {
                 echo 'selected="selected"';
             }
-            ?> value="edit.php?post_type=job&page=WPJobsJobApps&jobid=<?php echo $job_info->ID; ?>"><?php echo $job_info->post_title; ?></option>
+            ?> value="edit.php?post_type=job&page=WPJobsApps&jobid=<?php echo $job_info->ID; ?>"><?php echo $job_info->post_title; ?></option>
                 <?php
             endforeach;
             wp_reset_postdata();
@@ -49,10 +49,12 @@ $jobs = get_posts($jb_args);
         <th><strong><?php _e('Phone Number', 'wp-jobs'); ?></strong></th>
         <th><strong><?php _e('Download Resume', 'wp-jobs'); ?></strong></th>
     </tr>
+
     <?php
     $column_name = "app_id";
     if (null !== $job_id) {
-        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_app_user_info WHERE app_job_id = %d ORDER BY %s DESC ", $column_name, $job_id));
+
+        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_app_user_info WHERE app_job_id = %d ORDER BY %s DESC ", $job_id, $column_name));
 
         //$qry = "SELECT * FROM " . $wpdb->prefix . "app_user_info WHERE app_job_id = %d ";
     } else {
@@ -61,7 +63,9 @@ $jobs = get_posts($jb_args);
     //$qry .= " ORDER BY `app_id` DESC ";
     //$users = $wpdb->get_results($wpdb->prepare($qry, $job_id));
     $i = 1;
+
     foreach ($users as $user) {
+      echo $job_id;
         ?>
         <tr>
             <td><?php echo $i; ?></td>

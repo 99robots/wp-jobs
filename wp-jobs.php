@@ -4,7 +4,7 @@
   Plugin URI: https://99robots.com/products
   Description: Post jobs on your WordPress site. User can apply and attach resume/CV for the jobs.
   Author: 99 Robots
-  Version: 2.1
+  Version: 2.2
   Author URI: https://99robots.com/
   Text Domain: wp-jobs
   Domain Path: /languages
