@@ -187,7 +187,7 @@ if (isset($_POST['btnsubform'])) {
                                             $emailattqry = "select app_cv from " . $tbl . "app_user_info where app_job_id='" . $post->ID . "' and app_email='" . $email . "'";
 
                                             $getattachEmail = $wpdb->get_var($emailattqry);
-                                            $docmain = pathinfo(ABSPATH);
+                                            $docmain = pathinfo(WP_CONTENT_DIR);
                                             $docpath = $docmain['dirname'];
                                             $attachpath = wp_make_link_relative($getattachEmail);
                                             $finalpath = $docpath . $attachpath;

@@ -52,20 +52,21 @@ $jobs = get_posts($jb_args);
 
     <?php
     $column_name = "app_id";
+    $tbl = $wpdb->prefix;
+	  $tablename = $tbl . "app_user_info";
     if (null !== $job_id) {
 
-        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_app_user_info WHERE app_job_id = %d ORDER BY %s DESC ", $job_id, $column_name));
+        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . $tablename . " WHERE app_job_id = %d ORDER BY %s DESC ", $job_id, $column_name));
 
         //$qry = "SELECT * FROM " . $wpdb->prefix . "app_user_info WHERE app_job_id = %d ";
     } else {
-        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_app_user_info ORDER BY %s DESC ", $column_name));
+        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM ". $tablename ." ORDER BY %s DESC ", $column_name));
     }
     //$qry .= " ORDER BY `app_id` DESC ";
     //$users = $wpdb->get_results($wpdb->prepare($qry, $job_id));
     $i = 1;
 
     foreach ($users as $user) {
-      echo $job_id;
         ?>
         <tr>
             <td><?php echo $i; ?></td>

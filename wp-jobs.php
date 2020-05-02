@@ -4,7 +4,7 @@
   Plugin URI: https://99robots.com/products
   Description: Post jobs on your WordPress site. User can apply and attach resume/CV for the jobs.
   Author: 99 Robots
-  Version: 2.2
+  Version: 2.3
   Author URI: https://99robots.com/
   Text Domain: wp-jobs
   Domain Path: /languages
@@ -96,7 +96,6 @@ function wp_jobs_custom_init() {
 }
 
 #add_action('init', 'wp_jobs_Adduser_tbl');
-
 function wp_jobs_Adduser_tbl() {
 
     global $wpdb;
@@ -105,7 +104,6 @@ function wp_jobs_Adduser_tbl() {
     $sql = "select * from $table_name";
     $out = $wpdb->get_results($sql);
     if ($out) {
-
     } else {
         $sql = "CREATE TABLE IF NOT EXISTS `$table_name` (
   `app_id` int(11) NOT NULL AUTO_INCREMENT,
