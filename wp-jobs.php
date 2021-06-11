@@ -1,11 +1,11 @@
 <?php
 /*
   Plugin Name: WP Jobs
-  Plugin URI: https://draftpress.com/products
+  Plugin URI: https://draftpress.com/products/wp-jobs
   Description: Post jobs on your WordPress site. User can apply and attach resume/CV for the jobs.
-  Author: 99 Robots
-  Version: 2.3.1
-  Author URI: https://99robots.com/
+  Author: DraftPress
+  Version: 2.3.2
+  Author URI: https://draftpress.com/
   Text Domain: wp-jobs
   Domain Path: /languages
  */
