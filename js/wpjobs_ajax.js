@@ -1,6 +1,6 @@
 // JavaScript Document
-jQuery(document).ready(function($){
-	$("#form1").submit(function(){
+jQuery(function($){
+	$("#form1").on("submit", function(){
 		$('#wpjobs_loading').show();
 		$('#wpjobs_submit').attr('disabled', true);
 		data = $("#form1").serialize()+'&do=update_wpjobs_options&action=update_wpjobs_options&wpjobs_nonce='+wpjobs_vars.wpjobs_nonce;
