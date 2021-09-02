@@ -1,11 +1,11 @@
 <?php
 /*
   Plugin Name: WP Jobs
-  Plugin URI: https://draftpress.com/products
+  Plugin URI: https://draftpress.com/products/wp-jobs
   Description: Post jobs on your WordPress site. User can apply and attach resume/CV for the jobs.
-  Author: 99 Robots
-  Version: 2.3.1
-  Author URI: https://99robots.com/
+  Author: DraftPress
+  Version: 2.3.2
+  Author URI: https://draftpress.com/
   Text Domain: wp-jobs
   Domain Path: /languages
  */
@@ -95,7 +95,7 @@ function wp_jobs_custom_init() {
     add_role('Applicant', 'Applicant');
 }
 
-#add_action('init', 'wp_jobs_Adduser_tbl');
+add_action('init', 'wp_jobs_Adduser_tbl');
 function wp_jobs_Adduser_tbl() {
 
     global $wpdb;
@@ -177,15 +177,12 @@ function wp_jobs_taxonomy() {
 
 // Hook into the 'init' action
 add_action('init', 'wp_jobs_taxonomy', 0);
-#include wp_jobs_path.'functions.php';
 
 function wpjobs_AdminMenu() {
     global $wpjobs_PluginDirName, $wpjobs_PluginName, $wpjobs_settings_page;
     $wpjobs_homepage = add_menu_page($wpjobs_PluginName . " Configuration", 'WP Jobs', 'edit_themes', $wpjobs_PluginName . "Home", 'wpjobs_HomeView');
     $wpjobs_settings_page = add_submenu_page("WPJobsHome", "Job Settings", 'Settings', "edit_themes", "JobSettings", 'wpjobs_SettingsView');
     $wpjobs_applications = add_submenu_page("edit.php?post_type=job", "Job Applications", "Job Applications", 'edit_themes', $wpjobs_PluginName . "Apps", 'wpjobs_ApplicationsView');
-    //add_action( 'admin_print_styles-' . $submenu, 'admin_custom_css' );
-
 }
 add_action('admin_menu', 'wpjobs_AdminMenu');
 
@@ -390,8 +387,8 @@ function wp_jobs_get_page_ID_by_slug($page_slug) {
 function wpjobs_load_scripts($hook) {
     global $PluginDirName, $PluginName, $wpjobs_settings_page;
 
-    /* if ( $hook != $wpjobs_settings_page )
-      return; */
+     if ( $hook != $wpjobs_settings_page )
+      return; 
 
     wp_enqueue_script('wpjobs_ajax', plugin_dir_url(__FILE__) . 'js/wpjobs_ajax.js', array('jquery'));
     wp_localize_script('wpjobs_ajax', 'wpjobs_vars', array(
@@ -425,8 +422,7 @@ function wp_jobs_list_shortcode($atts) {
         'num' => 0,
         'dept' => 0,
             ), $atts);
-    /*
-     */
+  
     if ($wpj_args['dept'] > 0) {
         $myquery = array(
             'post_type' => 'job',
@@ -439,7 +435,7 @@ function wp_jobs_list_shortcode($atts) {
                 ),
             ),
         );
-        /*
+        
           $myquery['tax_query'] = array(
           array(
           'taxonomy' => 'department',
@@ -447,7 +443,7 @@ function wp_jobs_list_shortcode($atts) {
           'field' => 'id',
           'post_type' => 'job',
           'post_status' => 'publish',
-          )); */
+          )); 
     } else {
         $myquery = array(
             'posts_per_page' => $wpj_args['num'],

@@ -59,7 +59,7 @@ if ((isset($_REQUEST['btnsub'])) && $_REQUEST['dropdept'] != '0') {
                 </script>
                 <?php
                 $items = query_posts($myquery);
-                #$wp_query = $items;
+                $wp_query = $items;
             } else {
                 $args_job = array(
                     'post_type' => 'job',
@@ -67,8 +67,8 @@ if ((isset($_REQUEST['btnsub'])) && $_REQUEST['dropdept'] != '0') {
                 );
                 $items = query_posts($args_job);
             }
-            #$count = $items->post_count; #count($items);
-            #echo "<div class='info-error'><br/>" . __('Job result found ', 'wp-jobs') . $count . "</div>";
+            $count = $items->post_count; #count($items);
+            echo "<div class='info-error'><br/>" . __('Job result found ', 'wp-jobs') . $count . "</div>";
             ?>
             <ul class="wpjbs_jbmain">
                 <li>
@@ -104,9 +104,9 @@ if ((isset($_REQUEST['btnsub'])) && $_REQUEST['dropdept'] != '0') {
     </div>
     <?php wp_reset_postdata(); ?>
 
-    <!--<div class="wpjbs_listright">
-        <?php //get_sidebar(); ?>
-    </div>-->
+   <div class="wpjbs_listright">
+        <?php get_sidebar(); ?>
+    </div>
     <div class="clear"></div>
 </div><!-- #content -->
 

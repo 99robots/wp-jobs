@@ -3,8 +3,8 @@ Contributors: 99robots, charliepatel, draftpress
 Donate link: http://www.intensewp.com/wp-jobs/
 Tags: wp jobs, wordpress job listing plugin, wordpress jobs, resume cv attachment
 Requires at least: 4.5
-Tested up to: 5.5.1
-Stable tag: 2.3.1
+Tested up to: 5.8
+Stable tag: 2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,10 @@ Support
 == Screenshots ==
 
 == Changelog ==
+
+= 2.3.2 = 2021-09-02
+* Updated to make compatible with WordPress 5.8
+* FIX: Shorthand function depreciation issues
 
 = 2.3.1 = 2020-09-14
 * Updated to make compatible with WordPress 5.5.1
