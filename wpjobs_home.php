@@ -2,47 +2,7 @@
 ?>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<style>
-.dflex{
-  display: flex;
-}
-.mr10{
-  margin-right: 10px;
-}
-.pt3{
-  padding-top: 3px;
-}
-.pull-right{
-  float: right;
-}
-.pull-left{
-  float: left;
-}
-.info-box{
-  padding: 20px;
-  background: #fff;
-  display: inline-block;
-  width: 40%;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 1px 1px rgba(0,0,0,.04);
-  margin-bottom: 10px;
-}
-.bg-white{
-  background: #f5f5f5;
-}
-.fs16{
-  font-size: 16px;
-}
-.text-green{
-  color: green;
-}
-@media only screen and (max-width: 768px){
-  .info-box{
-    width: auto;
-    float: none !important;
-  }
-}
-</style>
+
 <div class="wrap">
   <h1>Dashboard</h1>
   <div id="welcome-panel" class="welcome-panel">
@@ -103,22 +63,3 @@
 </div>
 <div class="clearfix">
 </div>
-
-<!--    <h3><?php _e('Stay Updated and get more customized features directly to your inbox', 'wp-jobs'); ?></h3>
-    <p>
-
-        <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
-        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-    </style>
-    <div id="mc_embed_signup">
-        <form action="http://etechy101.us8.list-manage.com/subscribe/post?u=0feea2b1671b773d914b338e6&amp;id=8ca20a276b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <?php _e('<strong>We promise, your email will not be shared or spammed ever.</strong> Leave your email below', 'wp-jobs'); ?>
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="<?php _e('email address', 'wp-jobs'); ?>" required>
-
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_b8210f8523d1e31f37518d48e_155e3516fe" value=""></div>
-            <div class="clear"><input type="submit" value="<?php _e('Join', 'wp-jobs'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-        </form>
-    </div>-->
